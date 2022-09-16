@@ -1,52 +1,74 @@
 import Link from "next/link";
 import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
   IconButton,
   Flex,
   Box,
-  Spacer,
+  UnorderedList,
+  ListItem,
+  Button,
+  Text,
 } from "@chakra-ui/react";
-import { FcMenu, FcHome, FcAbout } from "react-icons/fc";
+import classes from "./NavBar.module.css";
 import { BsSearch } from "react-icons/bs";
-import { FiKey } from "react-icons/fi";
-
+import { GrMenu } from "react-icons/gr";
+import Image from "next/image";
+import logo from "../assets/images/logo.png";
+const menu = [
+  { name: "Home", link: "/" },
+  { name: "Buy Property", link: "/search?purpose=for-sale" },
+  { name: "Rent Property", link: "/search?purpose=for-rent" },
+  { name: "About", link: "/about" },
+  { name: "Blog", link: "/blog" },
+  { name: "Search", link: "/search" },
+];
 const NavBar = () => {
   return (
-    <Flex p="2" borderBottom="1px" borderColor="gray.100">
-      <Box fontSize="3xl" color="blue.400" fontWeight="bold">
-        <Link href="/" paddingLeft="2">
-          Realtor
-        </Link>
-        <Spacer />
-        <Box>
-          <Menu>
-            <MenuButton
-              as={IconButton}
-              icon={<FcMenu />}
-              variant="outline"
-              color="red.400"
+    <>
+      <div className={classes.nav_container}>
+        <div className={classes.logo_container}>
+          <Image width={50} height={50} src={logo} alt="logo" />
+        </div>
+        <div className={classes.menu_container}>
+          <ul>
+            {[
+              { name: "Home", link: "/" },
+              { name: "Buy Property", link: "/search?purpose=for-sale" },
+              { name: "Rent Property", link: "/search?purpose=for-rent" },
+              { name: "About", link: "/about" },
+              { name: "Blog", link: "/blog" },
+              { name: "Search", link: "/search" },
+            ].map((menu) => (
+              <li key={menu.name}>
+                <Link href={menu.link} passHref>
+                  {menu.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={classes.right_container}>
+          <div className={classes.search}>
+            <div>
+              <Link href="./search" passHref>
+                <IconButton aria-label="Search database" icon={<BsSearch />} />
+              </Link>
+            </div>
+            <Flex>
+              <Button colorScheme="red" size="md">
+                Get started
+              </Button>
+            </Flex>
+          </div>
+          <div className={classes.hamburger}>
+            <IconButton
+              size="lg"
+              aria-label="Search database"
+              icon={<GrMenu />}
             />
-            <MenuList>
-              <Link href="/" passHref>
-                <MenuItem icon={<FcHome />}>Home</MenuItem>
-              </Link>
-              <Link href="/search" passHref>
-                <MenuItem icon={<BsSearch />}>Search</MenuItem>
-              </Link>
-              <Link href="/search?purpose=for-sale" passHref>
-                <MenuItem icon={<FcAbout />}>Buy Property</MenuItem>
-              </Link>
-              <Link href="/search?purpose=for-rent" passHref>
-                <MenuItem icon={<FiKey />}>Rent Property</MenuItem>
-              </Link>
-            </MenuList>
-          </Menu>
-        </Box>
-      </Box>
-    </Flex>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

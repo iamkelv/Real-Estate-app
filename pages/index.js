@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Flex, Box, Text, Button } from "@chakra-ui/react";
 import { baseUrl, fetchApi } from "../utils/fetchApi";
 import Property from "../components/Property";
+import { HeroSection } from "../components/HeroSection";
 
 export const Banner = ({
   purpose,
@@ -15,7 +16,13 @@ export const Banner = ({
   imageUrl,
 }) => {
   return (
-    <Flex flexWrap="wrap" justifyContent="center" alignItem="center" m="10">
+    <Flex
+      flexWrap="wrap"
+      marginTop="300px"
+      justifyContent="center"
+      alignItem="center"
+      m="10"
+    >
       <Image src={imageUrl} alt="Banner" width={500} height={300} />
       <Box>
         <Text color="gray.500" fontSize="sm" fontWeight="medium">
@@ -50,6 +57,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
         title2="Everyone"
         desc1="Explore Apartments, Villas, Homes"
         desc2="and More"
+        ma
         buttonText="Explore Renting "
         linkName="/search?purpose=for-rent"
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
