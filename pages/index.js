@@ -5,6 +5,7 @@ import { baseUrl, fetchApi } from '../utils/fetchApi';
 import { useRouter } from 'next/router';
 import Property from '../components/Property';
 import { HeroSection } from '../components/HeroSection';
+import { SideNav } from '../components/SideNav';
 
 export const Banner = ({
   purpose,

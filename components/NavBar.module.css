@@ -76,10 +76,28 @@
     display: none;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .menu_container {
+        display: none;
+    }
+
+    .search {
+        display: none;
+        justify-content: flex-end;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .right_container {
+
+        justify-content: flex-end;
+    }
+}
 
 
-@media (min-width: 481px) and (max-width: 767px) {}
+
 
 
 @media (min-width: 320px) and (max-width: 480px) {

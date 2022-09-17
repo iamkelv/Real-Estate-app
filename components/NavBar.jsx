@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 import {
   IconButton,
   Flex,
@@ -7,19 +7,20 @@ import {
   ListItem,
   Button,
   Text,
-} from "@chakra-ui/react";
-import classes from "./NavBar.module.css";
-import { BsSearch } from "react-icons/bs";
-import { GrMenu } from "react-icons/gr";
-import Image from "next/image";
-import logo from "../assets/images/logo.png";
+} from '@chakra-ui/react';
+import classes from './NavBar.module.css';
+import { BsSearch } from 'react-icons/bs';
+import { GrMenu } from 'react-icons/gr';
+import Image from 'next/image';
+import logo from '../assets/images/logo.png';
+import { SideNav } from './SideNav';
 const menu = [
-  { name: "Home", link: "/" },
-  { name: "Buy Property", link: "/search?purpose=for-sale" },
-  { name: "Rent Property", link: "/search?purpose=for-rent" },
-  { name: "About", link: "/about" },
-  { name: "Blog", link: "/blog" },
-  { name: "Search", link: "/search" },
+  { name: 'Home', link: '/' },
+  { name: 'Buy Property', link: '/search?purpose=for-sale' },
+  { name: 'Rent Property', link: '/search?purpose=for-rent' },
+  { name: 'About', link: '/about' },
+  { name: 'Blog', link: '/blog' },
+  { name: 'Search', link: '/search' },
 ];
 const NavBar = () => {
   return (
@@ -33,12 +34,12 @@ const NavBar = () => {
         <div className={classes.menu_container}>
           <ul>
             {[
-              { name: "Home", link: "/" },
-              { name: "Buy Property", link: "/search?purpose=for-sale" },
-              { name: "Rent Property", link: "/search?purpose=for-rent" },
-              { name: "About", link: "/about" },
-              { name: "Blog", link: "/blog" },
-              { name: "Search", link: "/search" },
+              { name: 'Home', link: '/' },
+              { name: 'Buy Property', link: '/search?purpose=for-sale' },
+              { name: 'Rent Property', link: '/search?purpose=for-rent' },
+              { name: 'About', link: '/about' },
+              { name: 'Blog', link: '/blog' },
+              { name: 'Search', link: '/search' },
             ].map((menu) => (
               <li key={menu.name}>
                 <Link href={menu.link} passHref>
