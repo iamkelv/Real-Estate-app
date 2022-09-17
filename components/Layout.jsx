@@ -1,9 +1,10 @@
-import Head from "next/head";
-import { Box } from "@chakra-ui/react";
-import NavBar from "./NavBar";
-import Footer from "./Footer";
-import { HeroSection } from "./HeroSection";
-
+import Head from 'next/head';
+import { Box } from '@chakra-ui/react';
+import NavBar from './NavBar';
+import Footer from './Footer';
+import { HeroSection } from './HeroSection';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 const Layout = ({ children }) => {
   return (
     <>
@@ -12,7 +13,14 @@ const Layout = ({ children }) => {
       </Head>
       <NavBar />
       <HeroSection />
-      <Box maxWidth="1280px" top="0" margin="auto" marginTop="0" padding="0">
+      <Box
+        maxWidth="90%"
+        top="0"
+        margin="auto"
+        justifyContent="center"
+        marginTop="0"
+        padding="0"
+      >
         <header></header>
         <main>{children}</main>
         <footer>

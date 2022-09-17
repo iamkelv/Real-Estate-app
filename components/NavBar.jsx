@@ -26,7 +26,9 @@ const NavBar = () => {
     <>
       <div className={classes.nav_container}>
         <div className={classes.logo_container}>
-          <Image width={50} height={50} src={logo} alt="logo" />
+          <div>
+            <Image width={50} height={50} src={logo} alt="logo" />
+          </div>
         </div>
         <div className={classes.menu_container}>
           <ul>

@@ -3,7 +3,7 @@
     width: 100%;
     top: 0;
     height: 70px;
-    background: white;
+    background: rgb(255, 255, 255);
     z-index: 1;
     position: fixed;
     display: flex;
@@ -24,6 +24,12 @@
     height: inherit;
     width: 50px;
     height: 50px;
+
+
+}
+
+.logo_container div {
+    cursor: pointer;
 
 }
 
@@ -61,7 +67,10 @@
     gap: 3px;
 }
 
-
+.search {
+    display: flex;
+    gap: 3px
+}
 
 .hamburger {
     display: none;
